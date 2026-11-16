@@ -78,3 +78,26 @@ git branch -M main
 git remote set-url origin https://github.com/mkaur174/kaur_manpreet_ui_garden_build_checks.git
 6. Push  local commits:
 git push origin main
+
+
+# Simulated CI Failure (Red X Verification)
+
+1. Action: Introduced a syntax error in src/App.tsx and bypassed local pre-commit hooks.
+2. Command Executed:
+git add .
+git commit --no-verify -m "test ci failure"
+git push origin main
+3. Result: GitHub Actions triggered workflow #2 (test ci failure), which intentionally failed and displayed a red X.
+
+# Root Cause Identification & Local Resolution
+Build Log Inspection: Inspected the runner output for job failure details.
+ 1. Issue Found: ESLint throw an ERR_REQUIRE_ESM error due to CommonJS incompatibility with eslint-plugin-storybook under ESLint 8.
+ 2. Fix Applied: Removed "plugin:storybook/recommended" from the eslintConfig.extends array inside package.json.
+
+ # CI Pipeline Repair & Passing Build (Green Check Verification)
+ Action: Saved package.json, committed the configuration fix, and pushed to the remote repository.
+ 1. Command Executed:
+ git add .
+ git commit -m "fix: remove storybook plugin from eslint config" --no-verify
+ git push origin main
+ 2.  Result: GitHub Actions triggered workflow #6 (fix: remove storybook plugin from eslint config), running all linting, formatting, unit tests, and build checks cleanly to achieve a green checkmark in 42 seconds.

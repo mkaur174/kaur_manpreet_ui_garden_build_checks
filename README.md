@@ -23,40 +23,58 @@ I built modular, reusable React/TypeScript components that act as building block
 # The Subfiles (Types, Styles, and Index files):
 
 1. Each component has its own supporting subfiles (like TypeScript interface/type definitions for props, styling files, and export indices) to keep the code clean, type-safe, and organized.
+2. types sets the rules, tsx is the actual code, stories runs it in Storybook, tests checks for bugs, and index makes it easy to import
 
 
-STEPS FOR DOCKERFILE AND GITHUB REPOSITORY:
-1. Create a .dockerignore file in the project root to exclude node_modules, build, and .git.
+#        Codin assignment 13        #
 
-2. Create a Dockerfile in the project root with multi-stage instructions for building the React app and serving it with Nginx.
+# Duplicated the existing project folder using a simple terminal copy command.
+cp -r kaur-manpreet-ui-garden kaur_manpreet_ui_garden_build_checks
+#  Navigated to the folder:
+cd kaur_manpreet_ui_garden_build_checks
 
-3. Build the production Docker image named kaur_manpreet_coding_assignment12 using docker build.
+# Step 1: INSTALLING HUSKY:
+npm install husky --save-dev
+# Step 2: INITIALIZE HUSKY:
+npx husky init
 
-4. Run the container detached on port 8083 mapped to container port 80.
+# Step 3: PRE-COMMIT FILE:
+# Step 4: Create the GitHub Actions CI Workflow:
+  1. created a folder named .github then a subfolder workflows and then a file: ci.yml
 
-5. Open http://localhost:8083 in your browser to verify that all 13 UI components and media placeholders render cleanly.
+     #ci.yml :ci.yml is the GitHub Actions workflow file that I used. With each push to GitHub, it creates a fresh cloud environment, clones our code from the repository, installs the dependencies required, runs linters and unit tests, and confirms that everything builds properly.
 
-docker stop kaur_manpreet_coding_assignment12
-docker rm -f kaur_manpreet_coding_assignment12
-docker build -t kaur_manpreet_coding_assignment12 .
-docker run -d -p 8083:80 --name kaur_manpreet_coding_assignment12 kaur_manpreet_coding_assignment12
-direct cmd:   cmd.exe /c start http://localhost:8083
+# DOCKERFILE:
+Step 1: Build the React application
+Stage 2: # Stage 2: Serve the production build using Nginx
+all on port 8018
+      # Dockerfile for the coding assignment is a multi-stage build. In the first stage, we compile our React component library into production build using Node.js and in the next stage, we pack the static files in a light Nginx image running on port 8018.
 
-status: docker ps
-for all: docker ps -a
-to see files inside nginx: docker exec -it kaur_manpreet_coding_assignment12 ls -la /usr/share/nginx/html
+# Build the Docker image
+docker build -t kaur_manpreet_coding_assignment13 .
+# Run the container on port 8018
+docker run -p 8018:80 --name kaur_manpreet_coding_assignment13 kaur_manpreet_coding_assignment13
+# Stop the container:
+docker stop kaur_manpreet_coding_assignment13
+# Remove the container:
+docker rm kaur_manpreet_coding_assignment13
+# Check the containers running:
+docker ps
 
-direct cmd: cmd.exe /c start https://github.com/mkaur174/kaur-manpreet-ui-garden
 
+{ Few Changes:
+package.json Updates: Added lint and format scripts to execute ESLint and Prettier, along with a prepare script for Husky.}
+
+# GITHUB PUBLIC REPOSITORY:
+1. Initialize Git in the project directory:
+git init
+2. Stage all assignment files and modifications:
 git add .
-git commit -m "Update project for demo"
-git push
-
-## fix storybook:
-find src/ -name "*.stories.tsx" -exec sed -i "s/from '@storybook\/react'/from '@storybook\/react-webpack5'/g" {} +
-
-fuser -k 6006/tcp 2>/dev/null || true  (to lock to 6006 browser)
-npm run storybook
-npm run storybook -- --ci (to skip browser request and directly open it)
-
-cmd.exe /c start http://localhost:6006
+3. Commit the changes (after updating package.json scripts):
+git commit -m "feat: complete assignment 13 with docker, husky, and ci checks"
+4. Renamed the default branch to main:
+git branch -M main
+5. Updated the remote origin URL to the new GitHub repository:
+git remote set-url origin https://github.com/mkaur174/kaur_manpreet_ui_garden_build_checks.git
+6. Push  local commits:
+git push -u origin main

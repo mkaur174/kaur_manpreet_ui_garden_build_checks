@@ -23,8 +23,11 @@
     "build": "DISABLE_ESLINT_PLUGIN=true TSC_COMPILE_ON_ERROR=true react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
+    "lint": "eslint 'src/**/*.{ts,tsx}'",
+    "format": "prettier --write 'src/**/*.{ts,tsx,css,md}'",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "prepare": "husky"
   },
   "eslintConfig": {
     "extends": [
@@ -51,12 +54,13 @@
     "@storybook/addon-onboarding": "^10.6.3",
     "@storybook/addon-webpack5-compiler-babel": "^4.0.1",
     "@storybook/preset-create-react-app": "^10.6.3",
+    "@storybook/react-webpack5": "^10.6.3",
     "@testing-library/jest-dom": "^7.0.1",
     "eslint-plugin-storybook": "^10.6.3",
+    "husky": "^9.1.7",
     "jest-styled-components": "^7.4.0",
     "prop-types": "latest",
-    "webpack": "latest",
     "storybook": "^10.6.3",
-    "@storybook/react-webpack5": "^10.6.3"
+    "webpack": "latest"
   }
 }

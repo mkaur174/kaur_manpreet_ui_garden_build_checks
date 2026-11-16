@@ -38,12 +38,11 @@ export const Dropdown: React.FC<DropdownProps> = ({
       <option value="" disabled hidden>
         {placeholder || 'Select an option'}
       </option>
-      {options &&
-        options.map((opt, index) => (
-          <option key={index} value={opt}>
-            {opt}
-          </option>
-        ))}
+      {options && options.map((opt, index) => (
+  <option key={index} value={typeof opt === 'object' ? opt.value : opt}>
+    {typeof opt === 'object' ? opt.label : opt}
+  </option>
+))}
     </StyledSelect>
   );
 };

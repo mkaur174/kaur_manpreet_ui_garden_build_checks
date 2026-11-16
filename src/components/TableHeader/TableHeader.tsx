@@ -1,17 +1,17 @@
-import React from "react";
-import styled from "styled-components";
-import { TableHeaderProps } from "./TableHeader.types";
+import React from 'react';
+import styled from 'styled-components';
+import { TableHeaderProps } from './TableHeader.types';
 
 const StyledHeader = styled.th<{
   backgroundColor?: string;
   disabled?: boolean;
 }>`
-  background-color: ${(props) => (props.disabled ? "#e0e0e0" : props.backgroundColor || "#f4f4f4")};
-  color: ${(props) => (props.disabled ? "#888888" : "#333333")};
+  background-color: ${(props) => (props.disabled ? '#e0e0e0' : props.backgroundColor || '#f4f4f4')};
+  color: ${(props) => (props.disabled ? '#888888' : '#333333')};
   padding: 12px;
   font-weight: bold;
   border-bottom: 2px solid #ddd;
-  cursor: ${(props) => (props.disabled ? "not-allowed" : "default")};
+  cursor: ${(props) => (props.disabled ? 'not-allowed' : 'default')};
   opacity: ${(props) => (props.disabled ? 0.6 : 1)};
   text-align: left;
   width: 100%;
@@ -34,7 +34,7 @@ export const TableHeader = ({
       backgroundColor={backgroundColor}
       disabled={disabled}
     >
-      {children || "Header"}
+      {children || 'Header'}
     </StyledHeader>
   );
 };

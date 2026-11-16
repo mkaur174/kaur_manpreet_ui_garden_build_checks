@@ -1,6 +1,6 @@
-import React from "react";
-import styled from "styled-components";
-import { TableProps } from "./Table.types";
+import React from 'react';
+import styled from 'styled-components';
+import { TableProps } from './Table.types';
 
 const StyledTable = styled.table<{
   backgroundColor?: string;
@@ -8,9 +8,9 @@ const StyledTable = styled.table<{
 }>`
   width: 100%;
   border-collapse: collapse;
-  background-color: ${(props) => (props.disabled ? "#e0e0e0" : props.backgroundColor || "#ffffff")};
-  color: ${(props) => (props.disabled ? "#888888" : "#333333")};
-  cursor: ${(props) => (props.disabled ? "not-allowed" : "default")};
+  background-color: ${(props) => (props.disabled ? '#e0e0e0' : props.backgroundColor || '#ffffff')};
+  color: ${(props) => (props.disabled ? '#888888' : '#333333')};
+  cursor: ${(props) => (props.disabled ? 'not-allowed' : 'default')};
   opacity: ${(props) => (props.disabled ? 0.6 : 1)};
   box-sizing: border-box;
 

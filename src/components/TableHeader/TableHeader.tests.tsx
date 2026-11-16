@@ -1,9 +1,9 @@
-import React from "react";
-import { render, screen } from "@testing-library/react";
-import "@testing-library/jest-dom";
-import { TableHeader } from "./TableHeader";
+import React from 'react';
+import { render, screen } from '@testing-library/react';
+import '@testing-library/jest-dom';
+import { TableHeader } from './TableHeader';
 
-test("TableHeader is visible", () => {
+test('TableHeader is visible', () => {
   render(
     <table>
       <thead>
@@ -11,13 +11,13 @@ test("TableHeader is visible", () => {
           <TableHeader>Test Header</TableHeader>
         </tr>
       </thead>
-    </table>,
+    </table>
   );
-  const headerElement = screen.getByTestId("table-header");
+  const headerElement = screen.getByTestId('table-header');
   expect(headerElement).toBeVisible();
 });
 
-test("TableHeader background color changes when disabled", () => {
+test('TableHeader background color changes when disabled', () => {
   render(
     <table>
       <thead>
@@ -25,8 +25,8 @@ test("TableHeader background color changes when disabled", () => {
           <TableHeader disabled={true}>Disabled Header</TableHeader>
         </tr>
       </thead>
-    </table>,
+    </table>
   );
-  const headerElement = screen.getByTestId("table-header");
-  expect(headerElement).toHaveStyle("background-color: rgb(224, 224, 224)");
+  const headerElement = screen.getByTestId('table-header');
+  expect(headerElement).toHaveStyle('background-color: rgb(224, 224, 224)');
 });

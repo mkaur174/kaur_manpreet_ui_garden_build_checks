@@ -1,12 +1,12 @@
-import React from "react";
-import { ComponentStory, ComponentMeta } from "@storybook/react-webpack5";
-import { Table } from "./Table";
+import React from 'react';
+import { ComponentStory, ComponentMeta } from '@storybook/react-webpack5';
+import { Table } from './Table';
 
 export default {
-  title: "Components/Table",
+  title: 'Components/Table',
   component: Table,
   argTypes: {
-    backgroundColor: { control: "color" },
+    backgroundColor: { control: 'color' },
   },
 } as ComponentMeta<typeof Table>;
 

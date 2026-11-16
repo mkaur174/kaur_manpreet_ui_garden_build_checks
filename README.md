@@ -71,10 +71,10 @@ git init
 2. Stage all assignment files and modifications:
 git add .
 3. Commit the changes (after updating package.json scripts):
-git commit -m "feat: complete assignment 13 with docker, husky, and ci checks"
+git commit -m "feat: complete assignment 13 files" --no-verify
 4. Renamed the default branch to main:
 git branch -M main
 5. Updated the remote origin URL to the new GitHub repository:
 git remote set-url origin https://github.com/mkaur174/kaur_manpreet_ui_garden_build_checks.git
 6. Push  local commits:
-git push -u origin main
+git push origin main

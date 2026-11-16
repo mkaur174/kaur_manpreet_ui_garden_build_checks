@@ -1,12 +1,12 @@
-import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react-webpack5';
-import { TableRow } from './TableRow';
+import React from "react";
+import { ComponentStory, ComponentMeta } from "@storybook/react-webpack5";
+import { TableRow } from "./TableRow";
 
 export default {
-  title: 'Components/TableRow',
+  title: "Components/TableRow",
   component: TableRow,
   argTypes: {
-    backgroundColor: { control: 'color' },
+    backgroundColor: { control: "color" },
   },
 } as ComponentMeta<typeof TableRow>;
 

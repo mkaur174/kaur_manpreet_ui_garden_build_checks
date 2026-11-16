@@ -1,12 +1,12 @@
-import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react-webpack5';
-import { TableFooter } from './TableFooter';
+import React from "react";
+import { ComponentStory, ComponentMeta } from "@storybook/react-webpack5";
+import { TableFooter } from "./TableFooter";
 
 export default {
-  title: 'Components/TableFooter',
+  title: "Components/TableFooter",
   component: TableFooter,
   argTypes: {
-    backgroundColor: { control: 'color' },
+    backgroundColor: { control: "color" },
   },
 } as ComponentMeta<typeof TableFooter>;
 

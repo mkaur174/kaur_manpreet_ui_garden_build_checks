@@ -1,18 +1,18 @@
-import React from 'react';
-import styled from 'styled-components';
-import { Button } from './components/Button';
-import { Label } from './components/Label';
-import { Text } from './components/Text';
-import { Dropdown } from './components/Dropdown';
-import { RadioButton } from './components/RadioButton';
-import { Img } from './components/Img';
-import { HeroImage } from './components/HeroImage';
-import { Card } from './components/Card';
-import { Table } from './components/Table';
-import { TableHeader } from './components/TableHeader';
-import { TableRow } from './components/TableRow';
-import { TableCell } from './components/TableCell';
-import { TableFooter } from './components/TableFooter';
+import React from "react";
+import styled from "styled-components";
+import { Button } from "./components/Button";
+import { Label } from "./components/Label";
+import { Text } from "./components/Text";
+import { Dropdown } from "./components/Dropdown";
+import { RadioButton } from "./components/RadioButton";
+import { Img } from "./components/Img";
+import { HeroImage } from "./components/HeroImage";
+import { Card } from "./components/Card";
+import { Table } from "./components/Table";
+import { TableHeader } from "./components/TableHeader";
+import { TableRow } from "./components/TableRow";
+import { TableCell } from "./components/TableCell";
+import { TableFooter } from "./components/TableFooter";
 
 const Container = styled.div`
   padding: 30px;
@@ -77,7 +77,10 @@ function App() {
         <Grid>
           <Img width="150px" alt="Active media" />
           <Img width="150px" alt="Disabled media" disabled />
-          <Card title="Component Card" description="A responsive card component built with Styled-Components." />
+          <Card
+            title="Component Card"
+            description="A responsive card component built with Styled-Components."
+          />
         </Grid>
       </Section>
 

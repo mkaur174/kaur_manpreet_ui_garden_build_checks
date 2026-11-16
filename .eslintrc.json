@@ -1,9 +1,18 @@
 {
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "jest": true
+  },
+  "ignorePatterns": ["**/*.d.ts"],
   "extends": [
     "react-app",
-    "react-app/jest"
+    "react-app/jest",
+    "plugin:prettier/recommended"
   ],
   "rules": {
-    "semi": ["error", "always"]
+    "prettier/prettier": "error",
+    "no-unused-vars": "warn",
+    "no-console": "warn"
   }
 }

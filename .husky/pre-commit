@@ -1,3 +1,10 @@
+set -e
+
+echo "Running Prettier check..."
+npm run format:check
+
+echo "Running ESLint check..."
 npm run lint
-npm run format
-npm test -- --watchAll=false
+
+echo "Running Tests..."
+CI=true npm test
